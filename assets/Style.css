@@ -1,29 +1,44 @@
-/* Sidebar: blocco principale con sfondo arancione */
-[data-testid="stSidebar"], [data-testid="stSidebarContent"] {
+/* Sidebar interamente arancione */
+section[data-testid="stSidebar"] {
     background-color: #FF8C00 !important;
 }
 
-/* Testi e label nella sidebar in bianco per contrasto */
-[data-testid="stSidebar"] * {
+/* Tutto il contenuto interno della sidebar */
+section[data-testid="stSidebar"] * {
+    background-color: transparent !important;  /* rimuove sfondo bianco interno */
     color: white !important;
+    border-color: white !important;
 }
 
-/* Campi di input sulla sidebar: sfondo bianco con testo arancione */
-[data-testid="stSidebar"] input,
-[data-testid="stSidebar"] textarea,
-[data-testid="stSidebar"] select {
+/* Input e select con bordo bianco, sfondo trasparente e testo bianco */
+section[data-testid="stSidebar"] input,
+section[data-testid="stSidebar"] textarea,
+section[data-testid="stSidebar"] select {
+    background-color: transparent !important;
+    color: white !important;
+    border: 1px solid white !important;
+    border-radius: 5px;
+}
+
+/* Pulsanti nella sidebar */
+section[data-testid="stSidebar"] button {
     background-color: white !important;
     color: #FF8C00 !important;
-    border-radius: 4px;
-    padding: 0.3em;
+    font-weight: bold;
+    border: none;
 }
 
-/* Main: sfondo completamente bianco */
-[data-testid="stAppViewContainer"], div.block-container {
+/* Sfondo del main bianco */
+[data-testid="stAppViewContainer"], .block-container {
     background-color: white !important;
 }
 
-/* Titoli e pulsanti principali */
+/* Titoli principali */
+h1, h2, h3, h4 {
+    color: #FF8C00;
+    text-align: center;
+}
+li e pulsanti principali */
 h1, h2, h3, h4 {
     color: #FF8C00;
     text-align: center;
