@@ -5,7 +5,7 @@ section[data-testid="stSidebar"] {
 
 /* Tutto il contenuto interno della sidebar */
 section[data-testid="stSidebar"] * {
-    background-color: transparent !important;  /* rimuove sfondo bianco interno */
+    background-color: #FF8C00 !important;  /* rimuove sfondo bianco interno */
     color: white !important;
     border-color: white !important;
 }
