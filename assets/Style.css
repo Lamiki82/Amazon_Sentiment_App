@@ -1,15 +1,16 @@
-/* === SIDEBAR === */
+/* === SIDEBAR COMPLETAMENTE ARANCIONE === */
 section[data-testid="stSidebar"] {
     background-color: #FF8C00 !important;
 }
 
+/* Contenuto interno della sidebar */
 section[data-testid="stSidebar"] * {
-    background-color: #FF8C00 !important; /* Rimuove sfondo bianco interno */
+    background-color: #FF8C00 !important;  /* Elimina sfondo bianco interno */
     color: white !important;
     border-color: white !important;
 }
 
-/* Input, textarea e select nella sidebar */
+/* Input, textarea e select */
 section[data-testid="stSidebar"] input,
 section[data-testid="stSidebar"] textarea,
 section[data-testid="stSidebar"] select {
@@ -17,6 +18,20 @@ section[data-testid="stSidebar"] select {
     color: white !important;
     border: 1px solid white !important;
     border-radius: 5px;
+}
+
+/* Checkbox */
+section[data-testid="stSidebar"] input[type="checkbox"] {
+    accent-color: white !important;
+    background-color: transparent !important;
+    border: 1px solid white !important;
+    width: 16px;
+    height: 16px;
+}
+
+/* Etichette dei checkbox */
+section[data-testid="stSidebar"] label {
+    color: white !important;
 }
 
 /* Pulsanti nella sidebar */
