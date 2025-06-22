@@ -3,7 +3,7 @@ h1, h2, h3, h4 {
     color: #FF8C00;
 }
 
-/* Centrare i pulsanti */
+/* Pulsanti principali */
 button[kind="primary"] {
     display: block;
     margin: 1em auto;
@@ -12,23 +12,30 @@ button[kind="primary"] {
     border: none;
 }
 
-/* Sidebar a contrasto */
+/* Sidebar: sfondo arancione e testo bianco */
 section[data-testid="stSidebar"] {
     background-color: #FF8C00 !important;
-    color: white;
 }
+
 section[data-testid="stSidebar"] * {
     color: white !important;
 }
-section[data-testid="stSidebar"] .stButton>button {
-    background-color: #ffffff10 !important;
-    color: white !important;
+
+/* Campi input nella sidebar con sfondo bianco */
+section[data-testid="stSidebar"] .stTextInput,
+section[data-testid="stSidebar"] .stTextArea,
+section[data-testid="stSidebar"] .stSelectbox,
+section[data-testid="stSidebar"] .stNumberInput,
+section[data-testid="stSidebar"] .stDateInput,
+section[data-testid="stSidebar"] .stCheckbox {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 6px;
+    padding: 0.5em;
 }
 
-/* Alternanza sfondi main */
-.stApp > div > div > div > div:nth-child(odd) {
-    background-color: white;
+/* Sfondo del main completamente bianco */
+div.block-container {
+    background-color: white !important;
 }
-.stApp > div > div > div > div:nth-child(even) {
-    background-color: #e6f2ff;
-}
+
