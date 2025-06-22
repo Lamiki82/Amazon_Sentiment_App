@@ -19,20 +19,20 @@ section[data-testid="stSidebar"] {
     padding: 1em;
 }
 
-/* Sidebar: testo bianco */
+/* Sidebar: testo e componenti azzurri */
 section[data-testid="stSidebar"] * {
-    color: white !important;
+    color: #00BFFF !important;
 }
 
-/* Input della sidebar: sfondo bianco e testo nero per contrasto */
+/* Input della sidebar: sfondo arancio leggero e testo azzurro */
 section[data-testid="stSidebar"] .stTextInput,
 section[data-testid="stSidebar"] .stTextArea,
 section[data-testid="stSidebar"] .stSelectbox,
 section[data-testid="stSidebar"] .stNumberInput,
 section[data-testid="stSidebar"] .stDateInput,
 section[data-testid="stSidebar"] .stCheckbox {
-    background-color: white !important;
-    color: black !important;
+    background-color: #ffa54f !important; /* arancio chiaro */
+    color: #00BFFF !important;            /* azzurro */
     border-radius: 6px;
     padding: 0.4em;
 }
