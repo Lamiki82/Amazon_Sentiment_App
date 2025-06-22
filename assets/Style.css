@@ -19,22 +19,34 @@ section[data-testid="stSidebar"] {
     padding: 1em;
 }
 
-/* Sidebar: testo e componenti in bianco per contrasto */
+/* Testo nella sidebar: azzurro */
 section[data-testid="stSidebar"] * {
-    color: white !important;
+    color: #e0f7ff !important; /* azzurro chiaro */
 }
 
-/* Componenti nella sidebar con sfondo bianco e testo arancione */
+/* Campi input nella sidebar: sfondo trasparente e bordo azzurro */
 section[data-testid="stSidebar"] input,
 section[data-testid="stSidebar"] textarea,
 section[data-testid="stSidebar"] select {
-    background-color: white !important;
-    color: #FF8C00 !important;
+    background-color: #ffb366 !important; /* arancio chiaro */
+    color: #003366 !important; /* testo blu scuro per leggibilità */
+    border: 1px solid #ffffff80;
     border-radius: 5px;
     padding: 0.4em;
 }
 
-/* Sfondo principale completamente bianco */
+/* Etichette sopra i campi nella sidebar */
+section[data-testid="stSidebar"] label {
+    color: #ffffff !important;
+}
+
+/* Pulsanti nella sidebar */
+section[data-testid="stSidebar"] button {
+    background-color: #ffffff20 !important;
+    color: #ffffff !important;
+}
+
+/* Sfondo principale bianco */
 div.block-container {
     background-color: white !important;
 }
