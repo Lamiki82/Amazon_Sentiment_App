@@ -25,7 +25,8 @@ section[data-testid="stSidebar"] button {
     background-color: transparent !important;
     color: white !important;
     font-weight: bold;
-    border: none;
+    border: white;
+    align: center;
 }
 
 /* Sfondo del main bianco */
