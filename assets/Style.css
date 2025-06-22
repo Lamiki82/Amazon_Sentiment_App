@@ -22,8 +22,8 @@ section[data-testid="stSidebar"] select {
 
 /* Pulsanti nella sidebar */
 section[data-testid="stSidebar"] button {
-    background-color: white !important;
-    color: #FF8C00 !important;
+    background-color: transparent !important;
+    color: white !important;
     font-weight: bold;
     border: none;
 }
