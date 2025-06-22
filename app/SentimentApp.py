@@ -34,7 +34,7 @@ def get_base64_encoded_image(image_path):
 nltk.download('stopwords')
 
 # === CONFIGURAZIONE STREAMLIT ===
-load_external_css("assets/style.css")
+load_external_css("https://github.com/Lamiki82/Amazon_Sentiment_App/blob/main/assets/Style.css")
 # === LOAD DATA ===
 @st.cache_data
 def load_data():
