@@ -1,0 +1,34 @@
+/* Titoli arancioni */
+h1, h2, h3, h4 {
+    color: #FF8C00;
+}
+
+/* Centrare i pulsanti */
+button[kind="primary"] {
+    display: block;
+    margin: 1em auto;
+    background-color: #FF8C00 !important;
+    color: white !important;
+    border: none;
+}
+
+/* Sidebar a contrasto */
+section[data-testid="stSidebar"] {
+    background-color: #FF8C00 !important;
+    color: white;
+}
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
+section[data-testid="stSidebar"] .stButton>button {
+    background-color: #ffffff10 !important;
+    color: white !important;
+}
+
+/* Alternanza sfondi main */
+.stApp > div > div > div > div:nth-child(odd) {
+    background-color: white;
+}
+.stApp > div > div > div > div:nth-child(even) {
+    background-color: #e6f2ff;
+}

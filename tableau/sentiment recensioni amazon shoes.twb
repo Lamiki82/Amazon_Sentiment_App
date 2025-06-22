@@ -1,0 +1,2595 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <BasicButtonObject />
+    <BasicButtonObjectTextSupport />
+    <Extensions />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookOptimizerRuleConfig.true...WorkbookOptimizerRuleConfig />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/sentimentrecensioniamazonshoes?rev=1.3' id='sentimentrecensioniamazonshoes' path='/workbooks' revision='1.5' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='sentiment_shoes_data.csv+ (Connessioni multiple)' inline='true' name='federated.0pr7t1t1l7wtar1e954p00j8bifw' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='sentiment_shoes_data' name='textscan.0swrv6e1v1100t10otfz71i0zcj6'>
+            <connection class='textscan' directory='C:/Users/MICHELA/AppData/Local/Temp/TableauTemp/1102511312/Data/1dor82r09h9mdm1d1ql351ub51y3' workgroup-auth-mode='as-is' />
+          </named-connection>
+          <named-connection caption='cleaned_shoes_data' name='textscan.0h1gt6f1ab42gq1cak17207vttk9'>
+            <connection class='textscan' directory='C:/Users/MICHELA/AppData/Local/Temp/TableauTemp/1102511312/Data/0mdgsh71aysnld1ebjpep1ox5c34' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0swrv6e1v1100t10otfz71i0zcj6' name='sentiment_shoes_data.csv' table='[sentiment_shoes_data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='title' ordinal='0' />
+              <column datatype='real' name='price' ordinal='1' />
+              <column datatype='real' name='rating' ordinal='2' />
+              <column datatype='integer' name='total_reviews' ordinal='3' />
+              <column datatype='string' name='product_description' ordinal='4' />
+              <column datatype='string' name='reviews' ordinal='5' />
+              <column datatype='string' name='reviews_rating' ordinal='6' />
+              <column datatype='string' name='Shoe Type' ordinal='7' />
+              <column datatype='string' name='review' ordinal='8' />
+              <column datatype='real' name='review_rating' ordinal='9' />
+              <column datatype='string' name='clean_review' ordinal='10' />
+              <column datatype='real' name='sentiment_score' ordinal='11' />
+              <column datatype='string' name='sentiment_label' ordinal='12' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0h1gt6f1ab42gq1cak17207vttk9' name='cleaned_shoes_data.csv' table='[cleaned_shoes_data#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='title' ordinal='0' />
+              <column datatype='real' name='price' ordinal='1' />
+              <column datatype='real' name='rating' ordinal='2' />
+              <column datatype='integer' name='total_reviews' ordinal='3' />
+              <column datatype='string' name='product_description' ordinal='4' />
+              <column datatype='string' name='reviews' ordinal='5' />
+              <column datatype='string' name='reviews_rating' ordinal='6' />
+              <column datatype='string' name='Shoe Type' ordinal='7' />
+              <column datatype='string' name='review' ordinal='8' />
+              <column datatype='real' name='review_rating' ordinal='9' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Shoe Type (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[Shoe Type]' />
+          <map key='[Shoe Type]' value='[sentiment_shoes_data.csv].[Shoe Type]' />
+          <map key='[clean_review]' value='[sentiment_shoes_data.csv].[clean_review]' />
+          <map key='[price (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[price]' />
+          <map key='[price]' value='[sentiment_shoes_data.csv].[price]' />
+          <map key='[product_description (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[product_description]' />
+          <map key='[product_description]' value='[sentiment_shoes_data.csv].[product_description]' />
+          <map key='[rating (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[rating]' />
+          <map key='[rating]' value='[sentiment_shoes_data.csv].[rating]' />
+          <map key='[review (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[review]' />
+          <map key='[review]' value='[sentiment_shoes_data.csv].[review]' />
+          <map key='[review_rating (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[review_rating]' />
+          <map key='[review_rating]' value='[sentiment_shoes_data.csv].[review_rating]' />
+          <map key='[reviews (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[reviews]' />
+          <map key='[reviews]' value='[sentiment_shoes_data.csv].[reviews]' />
+          <map key='[reviews_rating (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[reviews_rating]' />
+          <map key='[reviews_rating]' value='[sentiment_shoes_data.csv].[reviews_rating]' />
+          <map key='[sentiment_label]' value='[sentiment_shoes_data.csv].[sentiment_label]' />
+          <map key='[sentiment_score]' value='[sentiment_shoes_data.csv].[sentiment_score]' />
+          <map key='[title (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[title]' />
+          <map key='[title]' value='[sentiment_shoes_data.csv].[title]' />
+          <map key='[total_reviews (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv].[total_reviews]' />
+          <map key='[total_reviews]' value='[sentiment_shoes_data.csv].[total_reviews]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[title]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rating]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_reviews</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_reviews]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>total_reviews</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_description]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>product_description</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reviews</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reviews]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>reviews</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reviews_rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reviews_rating]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>reviews_rating</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shoe Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Shoe Type]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>Shoe Type</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[review]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>review</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review_rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[review_rating]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>review_rating</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clean_review</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[clean_review]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>clean_review</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sentiment_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sentiment_score]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>sentiment_score</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sentiment_label</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[sentiment_label]</local-name>
+            <parent-name>[sentiment_shoes_data.csv]</parent-name>
+            <remote-alias>sentiment_label</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[title (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>title</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[rating (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>total_reviews</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[total_reviews (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>total_reviews</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_description (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>product_description</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reviews</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reviews (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>reviews</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>reviews_rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[reviews_rating (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>reviews_rating</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Shoe Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Shoe Type (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>Shoe Type</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[review (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>review</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review_rating</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[review_rating (cleaned_shoes_data.csv)]</local-name>
+            <parent-name>[cleaned_shoes_data.csv]</parent-name>
+            <remote-alias>review_rating</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='percentuale' datatype='real' name='[Calculation_1055549988307313]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNT([sentiment_label])/TOTAL(COUNT([sentiment_label]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='mediana' datatype='real' hidden='true' name='[Calculation_1055549990740338]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='MEDIAN([sentiment_score])' />
+      </column>
+      <column aggregation='None' datatype='integer' name='[Sentiment Score (contenitore)]' role='dimension' type='quantitative'>
+        <calculation class='bin' decimals='-2' formula='[sentiment_score]' peg='0' size='0.091' />
+      </column>
+      <column caption='Shoe Type (cleaned shoes data.csv)' datatype='string' hidden='true' name='[Shoe Type (cleaned_shoes_data.csv)]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Shoe Type]' role='dimension' type='nominal' />
+      <column caption='cleaned_shoes_data.csv' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]' role='measure' type='quantitative' />
+      <column caption='sentiment_shoes_data.csv' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]' role='measure' type='quantitative' />
+      <column caption='Clean Review' datatype='string' name='[clean_review]' role='dimension' type='nominal' />
+      <column caption='Price (Cleaned Shoes Data.Csv)' datatype='real' hidden='true' name='[price (cleaned_shoes_data.csv)]' role='measure' type='quantitative' />
+      <column caption='Price' datatype='real' hidden='true' name='[price]' role='measure' type='quantitative' />
+      <column caption='Product Description (Cleaned Shoes Data.Csv)' datatype='string' hidden='true' name='[product_description (cleaned_shoes_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Product Description' datatype='string' hidden='true' name='[product_description]' role='dimension' type='nominal' />
+      <column caption='Rating (Cleaned Shoes Data.Csv)' datatype='real' hidden='true' name='[rating (cleaned_shoes_data.csv)]' role='measure' type='quantitative' />
+      <column caption='Rating' datatype='real' name='[rating]' role='measure' type='quantitative' />
+      <column caption='Review (Cleaned Shoes Data.Csv)' datatype='string' hidden='true' name='[review (cleaned_shoes_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Review' datatype='string' name='[review]' role='dimension' type='nominal' />
+      <column caption='Review Rating (Cleaned Shoes Data.Csv)' datatype='real' hidden='true' name='[review_rating (cleaned_shoes_data.csv)]' role='measure' type='quantitative' />
+      <column caption='Review Rating' datatype='real' hidden='true' name='[review_rating]' role='measure' type='quantitative' />
+      <column caption='Reviews (Cleaned Shoes Data.Csv)' datatype='string' hidden='true' name='[reviews (cleaned_shoes_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Reviews' datatype='string' hidden='true' name='[reviews]' role='dimension' type='nominal' />
+      <column caption='Reviews Rating (Cleaned Shoes Data.Csv)' datatype='string' hidden='true' name='[reviews_rating (cleaned_shoes_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Reviews Rating' datatype='string' hidden='true' name='[reviews_rating]' role='dimension' type='nominal' />
+      <column caption='Sentiment Label' datatype='string' name='[sentiment_label]' role='dimension' type='nominal' />
+      <column caption='Sentiment Score' datatype='real' name='[sentiment_score]' role='measure' type='quantitative' />
+      <column caption='Title (Cleaned Shoes Data.Csv)' datatype='string' hidden='true' name='[title (cleaned_shoes_data.csv)]' role='dimension' type='nominal' />
+      <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+      <column caption='Total Reviews (Cleaned Shoes Data.Csv)' datatype='integer' hidden='true' name='[total_reviews (cleaned_shoes_data.csv)]' role='measure' type='quantitative' />
+      <column caption='Total Reviews' datatype='integer' name='[total_reviews]' role='measure' type='quantitative' />
+      <column-instance column='[sentiment_score]' derivation='Count' name='[cnt:sentiment_score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Sentiment Score (contenitore)]' derivation='None' name='[none:Sentiment Score (contenitore):ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Shoe Type]' derivation='None' name='[none:Shoe Type:nk]' pivot='key' type='nominal' />
+      <column-instance column='[sentiment_label]' derivation='None' name='[none:sentiment_label:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_1055549990740338]' derivation='User' name='[usr:Calculation_1055549990740338:qk]' pivot='key' type='quantitative' />
+      <group caption='Azione (Clean Review,Sentiment Label)' hidden='true' name='[Action (Clean Review,Sentiment Label)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[clean_review]' />
+          <groupfilter function='level-members' level='[sentiment_label]' />
+        </groupfilter>
+      </group>
+      <group caption='Azione (Sentiment Score (contenitore),Sentiment Label)' hidden='true' name='[Action (Sentiment Score (contenitore),Sentiment Label)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:Sentiment Score (contenitore):ok]' />
+          <groupfilter function='level-members' level='[sentiment_label]' />
+        </groupfilter>
+      </group>
+      <group caption='Azione (Shoe Type,Sentiment Label)' hidden='true' name='[Action (Shoe Type,Sentiment Label)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Shoe Type]' />
+          <groupfilter function='level-members' level='[sentiment_label]' />
+        </groupfilter>
+      </group>
+      <group caption='Azione (Shoe Type,Sentiment Label,Title)' hidden='true' name='[Action (Shoe Type,Sentiment Label,Title)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Shoe Type]' />
+          <groupfilter function='level-members' level='[sentiment_label]' />
+          <groupfilter function='level-members' level='[title]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F' units='records'>
+        <connection authentication='auth-none' author-locale='it_IT' class='hyper' dbname='C:/Users/MICHELA/Documents/REPOSITORY PYTHON/SENTIMENT AMAZON SHOES/tableau/sentiment recensioni amazon shoes.twb file/Data/Extracts/federated_0pr7t1t1l7wtar1e954p00.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='06/08/2025 11:17:13 PM' username=''>
+          <relation type='collection'>
+            <relation name='sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F' table='[Extract].[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]' type='table' />
+            <relation name='cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD' table='[Extract].[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Shoe Type (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[Shoe Type]' />
+            <map key='[Shoe Type]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[Shoe Type]' />
+            <map key='[clean_review]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[clean_review]' />
+            <map key='[price (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[price]' />
+            <map key='[price]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[price]' />
+            <map key='[product_description (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[product_description]' />
+            <map key='[product_description]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[product_description]' />
+            <map key='[rating (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[rating]' />
+            <map key='[rating]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[rating]' />
+            <map key='[review (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[review]' />
+            <map key='[review]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[review]' />
+            <map key='[review_rating (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[review_rating]' />
+            <map key='[review_rating]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[review_rating]' />
+            <map key='[reviews (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[reviews]' />
+            <map key='[reviews]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[reviews]' />
+            <map key='[reviews_rating (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[reviews_rating]' />
+            <map key='[reviews_rating]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[reviews_rating]' />
+            <map key='[sentiment_label]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[sentiment_label]' />
+            <map key='[sentiment_score]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[sentiment_score]' />
+            <map key='[title (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[title]' />
+            <map key='[title]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[title]' />
+            <map key='[total_reviews (cleaned_shoes_data.csv)]' value='[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD].[total_reviews]' />
+            <map key='[total_reviews]' value='[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F].[total_reviews]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='sentiment_shoes_data.csv+ (Connessioni multiple)' increment-value='%null%' refresh-type='create' rows-inserted='10908' timestamp-start='2025-06-08 23:17:13.208' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[title]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>title</remote-alias>
+              <ordinal>0</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>962</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>1</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>649</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rating</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[rating]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>rating</remote-alias>
+              <ordinal>2</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_reviews</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_reviews]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>total_reviews</remote-alias>
+              <ordinal>3</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>609</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_description]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>product_description</remote-alias>
+              <ordinal>4</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>778</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reviews</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[reviews]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>reviews</remote-alias>
+              <ordinal>5</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1023</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reviews_rating</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[reviews_rating]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>reviews_rating</remote-alias>
+              <ordinal>6</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>982</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shoe Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Shoe Type]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>Shoe Type</remote-alias>
+              <ordinal>7</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>review</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[review]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>review</remote-alias>
+              <ordinal>8</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2451</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>review_rating</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[review_rating]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>review_rating</remote-alias>
+              <ordinal>9</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>clean_review</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[clean_review]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>clean_review</remote-alias>
+              <ordinal>10</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2100</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sentiment_score</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[sentiment_score]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>sentiment_score</remote-alias>
+              <ordinal>11</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>200</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sentiment_label</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sentiment_label]</local-name>
+              <parent-name>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</parent-name>
+              <remote-alias>sentiment_label</remote-alias>
+              <ordinal>12</ordinal>
+              <family>sentiment_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[title (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>title</remote-alias>
+              <ordinal>13</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>962</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>14</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>649</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rating</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[rating (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>rating</remote-alias>
+              <ordinal>15</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>28</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>total_reviews</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[total_reviews (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>total_reviews</remote-alias>
+              <ordinal>16</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>609</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_description</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_description (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>product_description</remote-alias>
+              <ordinal>17</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>778</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reviews</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[reviews (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>reviews</remote-alias>
+              <ordinal>18</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1023</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>reviews_rating</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[reviews_rating (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>reviews_rating</remote-alias>
+              <ordinal>19</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>982</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Shoe Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Shoe Type (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>Shoe Type</remote-alias>
+              <ordinal>20</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>review</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[review (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>review</remote-alias>
+              <ordinal>21</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2451</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>review_rating</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[review_rating (cleaned_shoes_data.csv)]</local-name>
+              <parent-name>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</parent-name>
+              <remote-alias>review_rating</remote-alias>
+              <ordinal>22</ordinal>
+              <family>cleaned_shoes_data.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:sentiment_score:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549990740338:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Shoe Type:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Men&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Women&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:sentiment_label:nk]' palette='winter_10_0' type='palette'>
+            <map to='#bab2ae'>
+              <bucket>&quot;neutral&quot;</bucket>
+            </map>
+            <map to='#cecb76'>
+              <bucket>&quot;positive&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;negative&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;USA&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='cleaned_shoes_data.csv' id='cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD'>
+            <properties context=''>
+              <relation connection='textscan.0h1gt6f1ab42gq1cak17207vttk9' name='cleaned_shoes_data.csv' table='[cleaned_shoes_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='title' ordinal='0' />
+                  <column datatype='real' name='price' ordinal='1' />
+                  <column datatype='real' name='rating' ordinal='2' />
+                  <column datatype='integer' name='total_reviews' ordinal='3' />
+                  <column datatype='string' name='product_description' ordinal='4' />
+                  <column datatype='string' name='reviews' ordinal='5' />
+                  <column datatype='string' name='reviews_rating' ordinal='6' />
+                  <column datatype='string' name='Shoe Type' ordinal='7' />
+                  <column datatype='string' name='review' ordinal='8' />
+                  <column datatype='real' name='review_rating' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD' table='[Extract].[cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD]' type='table' />
+            </properties>
+          </object>
+          <object caption='sentiment_shoes_data.csv' id='sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F'>
+            <properties context=''>
+              <relation connection='textscan.0swrv6e1v1100t10otfz71i0zcj6' name='sentiment_shoes_data.csv' table='[sentiment_shoes_data#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='string' name='title' ordinal='0' />
+                  <column datatype='real' name='price' ordinal='1' />
+                  <column datatype='real' name='rating' ordinal='2' />
+                  <column datatype='integer' name='total_reviews' ordinal='3' />
+                  <column datatype='string' name='product_description' ordinal='4' />
+                  <column datatype='string' name='reviews' ordinal='5' />
+                  <column datatype='string' name='reviews_rating' ordinal='6' />
+                  <column datatype='string' name='Shoe Type' ordinal='7' />
+                  <column datatype='string' name='review' ordinal='8' />
+                  <column datatype='real' name='review_rating' ordinal='9' />
+                  <column datatype='string' name='clean_review' ordinal='10' />
+                  <column datatype='real' name='sentiment_score' ordinal='11' />
+                  <column datatype='string' name='sentiment_label' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F' table='[Extract].[sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[title]' />
+                <expression op='[title (cleaned_shoes_data.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[rating]' />
+                <expression op='[rating (cleaned_shoes_data.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='sentiment_shoes_data.csv_69BFAFF65C064A2EAA6268A16B0BEE2F' unique-key='true' />
+            <second-end-point object-id='cleaned_shoes_data.csv_5C03DBCC173F4C8E862D222C026C2CAD' unique-key='true' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.0pr7t1t1l7wtar1e954p00j8bifw'>
+      <datasources>
+        <datasource caption='sentiment_shoes_data.csv+ (Connessioni multiple)' name='federated.0pr7t1t1l7wtar1e954p00j8bifw' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0pr7t1t1l7wtar1e954p00j8bifw'>
+        <column-instance column='[sentiment_label]' derivation='None' name='[none:sentiment_label:nk]' pivot='key' type='nominal' />
+        <column caption='Sentiment Label' datatype='string' name='[sentiment_label]' role='dimension' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Sentiment Score (contenitore),Sentiment Label)]'>
+        <groupfilter function='crossjoin' user:ui-action-filter='[Action3_AABD550FB3EE4B498A44F85079516FD2]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+          <groupfilter function='level-members' level='[none:Sentiment Score (contenitore):ok]' />
+          <groupfilter function='level-members' level='[sentiment_label]' />
+        </groupfilter>
+      </filter>
+      <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' context='true'>
+        <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='member' level='[none:sentiment_label:nk]' member='&quot;negative&quot;' />
+          <groupfilter function='member' level='[none:sentiment_label:nk]' member='&quot;neutral&quot;' />
+          <groupfilter function='member' level='[none:sentiment_label:nk]' member='&quot;positive&quot;' />
+        </groupfilter>
+        <target field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filtra 1 (generato)' name='[Action1_04E31AF27CC8471BB6A920CFF30CC193]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='sentiment dash' type='sheet' worksheet='analisi per prodotto' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='sentiment dash' />
+      </command>
+    </action>
+    <action caption='Filtra 2 (generato)' name='[Action2_13B69B65ED09415795117743F76C51AA]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='sentiment dash' type='sheet' worksheet='parole chiave sentiment' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='sentiment dash' />
+      </command>
+    </action>
+    <action caption='Filtra 3 (generato)' name='[Action3_AABD550FB3EE4B498A44F85079516FD2]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='sentiment dash' type='sheet' worksheet='distribuzione sentiment' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='sentiment dash' />
+      </command>
+    </action>
+    <action caption='Filtra 4 (generato)' name='[Action4_11409E4D4CBD4824BC24AB965A74BB7E]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='sentiment dash' type='sheet' worksheet='info generiche' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='sentiment dash' />
+      </command>
+    </action>
+    <action caption='Evidenzia 1 (generato)' name='[Action5_B880A8A356B446E4912DC008E8A02458]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='analisi per prodotto' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Sentiment Label' />
+        <param name='target' value='analisi per prodotto' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='analisi per prodotto'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/sentimentrecensioniamazonshoes/analisiperprodotto?rev=' id='analisiperprodotto' path='/workbooks/sentimentrecensioniamazonshoes' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sentiment_shoes_data.csv+ (Connessioni multiple)' name='federated.0pr7t1t1l7wtar1e954p00j8bifw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pr7t1t1l7wtar1e954p00j8bifw'>
+            <column caption='percentuale' datatype='real' name='[Calculation_1055549988307313]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([sentiment_label])/TOTAL(COUNT([sentiment_label]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column aggregation='None' datatype='integer' name='[Sentiment Score (contenitore)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='-2' formula='[sentiment_score]' peg='0' size='0.091' />
+            </column>
+            <column datatype='string' name='[Shoe Type]' role='dimension' type='nominal' />
+            <column-instance column='[rating]' derivation='Avg' name='[avg:rating:qk]' pivot='key' type='quantitative' />
+            <column caption='Clean Review' datatype='string' name='[clean_review]' role='dimension' type='nominal' />
+            <column-instance column='[review]' derivation='Count' name='[cnt:review:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sentiment Score (contenitore)]' derivation='None' name='[none:Sentiment Score (contenitore):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Shoe Type]' derivation='None' name='[none:Shoe Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sentiment_label]' derivation='None' name='[none:sentiment_label:nk]' pivot='key' type='nominal' />
+            <column-instance column='[title]' derivation='None' name='[none:title:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='real' name='[rating]' role='measure' type='quantitative' />
+            <column caption='Review' datatype='string' name='[review]' role='dimension' type='nominal' />
+            <column caption='Sentiment Label' datatype='string' name='[sentiment_label]' role='dimension' type='nominal' />
+            <column caption='Sentiment Score' datatype='real' name='[sentiment_score]' role='measure' type='quantitative' />
+            <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1055549988307313]' derivation='User' name='[usr:Calculation_1055549988307313:qk:6]' pivot='key' type='quantitative'>
+              <table-calc ordering-field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[sentiment_label]' ordering-type='Field' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Clean Review,Sentiment Label)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_13B69B65ED09415795117743F76C51AA]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[clean_review]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action4_11409E4D4CBD4824BC24AB965A74BB7E]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Shoe Type]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Clean Review,Sentiment Label)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Sentiment Score (contenitore),Sentiment Label)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk:6]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk:6]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[avg:rating:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' />
+            </encodings>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:review:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' />
+              <tooltip column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk:6]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:title:nk]</rows>
+        <cols>([federated.0pr7t1t1l7wtar1e954p00j8bifw].[avg:rating:qk] + [federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:review:qk])</cols>
+      </table>
+      <simple-id uuid='{B10ED808-9236-476F-A4F5-99B031BA753D}' />
+    </worksheet>
+    <worksheet name='distribuzione sentiment'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/sentimentrecensioniamazonshoes/distribuzionesentiment?rev=' id='distribuzionesentiment' path='/workbooks/sentimentrecensioniamazonshoes' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sentiment_shoes_data.csv+ (Connessioni multiple)' name='federated.0pr7t1t1l7wtar1e954p00j8bifw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pr7t1t1l7wtar1e954p00j8bifw'>
+            <column caption='percentuale' datatype='real' name='[Calculation_1055549988307313]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([sentiment_label])/TOTAL(COUNT([sentiment_label]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column aggregation='None' datatype='integer' name='[Sentiment Score (contenitore)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='-2' formula='[sentiment_score]' peg='0' size='0.091' />
+            </column>
+            <column datatype='string' name='[Shoe Type]' role='dimension' type='nominal' />
+            <column caption='Clean Review' datatype='string' name='[clean_review]' role='dimension' type='nominal' />
+            <column-instance column='[sentiment_score]' derivation='Count' name='[cnt:sentiment_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sentiment Score (contenitore)]' derivation='None' name='[none:Sentiment Score (contenitore):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Sentiment Score (contenitore)]' derivation='None' name='[none:Sentiment Score (contenitore):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sentiment_label]' derivation='None' name='[none:sentiment_label:nk]' pivot='key' type='nominal' />
+            <column caption='Sentiment Label' datatype='string' name='[sentiment_label]' role='dimension' type='nominal' />
+            <column caption='Sentiment Score' datatype='real' name='[sentiment_score]' role='measure' type='quantitative' />
+            <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1055549988307313]' derivation='User' name='[usr:Calculation_1055549988307313:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Clean Review,Sentiment Label)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_13B69B65ED09415795117743F76C51AA]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[clean_review]' member='&quot;damaged shoes&quot;' />
+              <groupfilter function='member' level='[sentiment_label]' member='&quot;negative&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action4_11409E4D4CBD4824BC24AB965A74BB7E]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Shoe Type]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label,Title)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_04E31AF27CC8471BB6A920CFF30CC193]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Shoe Type]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+              <groupfilter function='level-members' level='[title]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label,Title)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Sentiment Score (contenitore),Sentiment Label)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Clean Review,Sentiment Label)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing custom-mark-size-in-axis-units='1.0' mark-alignment='mark-alignment-left' mark-sizing-setting='marks-scaling-on' use-custom-mark-size='false' />
+            <encodings>
+              <color column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' />
+              <tooltip column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:sentiment_score:qk]</rows>
+        <cols>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Sentiment Score (contenitore):qk]</cols>
+        <page-trail-options enabled='true' />
+      </table>
+      <simple-id uuid='{7E28ADD5-2C9E-4CE7-B550-240F14684ECA}' />
+    </worksheet>
+    <worksheet name='info generiche'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run><![CDATA[<informazioni generali recensioni amazon>]]></run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/sentimentrecensioniamazonshoes/infogeneriche?rev=' id='infogeneriche' path='/workbooks/sentimentrecensioniamazonshoes' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sentiment_shoes_data.csv+ (Connessioni multiple)' name='federated.0pr7t1t1l7wtar1e954p00j8bifw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pr7t1t1l7wtar1e954p00j8bifw'>
+            <column caption='percentuale' datatype='real' name='[Calculation_1055549988307313]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='COUNT([sentiment_label])/TOTAL(COUNT([sentiment_label]))'>
+                <table-calc ordering-type='Rows' />
+              </calculation>
+            </column>
+            <column aggregation='None' datatype='integer' name='[Sentiment Score (contenitore)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='-2' formula='[sentiment_score]' peg='0' size='0.091' />
+            </column>
+            <column datatype='string' name='[Shoe Type]' role='dimension' type='nominal' />
+            <column caption='Clean Review' datatype='string' name='[clean_review]' role='dimension' type='nominal' />
+            <column-instance column='[sentiment_score]' derivation='Count' name='[cnt:sentiment_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sentiment Score (contenitore)]' derivation='None' name='[none:Sentiment Score (contenitore):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Shoe Type]' derivation='None' name='[none:Shoe Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sentiment_label]' derivation='None' name='[none:sentiment_label:nk]' pivot='key' type='nominal' />
+            <column caption='Sentiment Label' datatype='string' name='[sentiment_label]' role='dimension' type='nominal' />
+            <column caption='Sentiment Score' datatype='real' name='[sentiment_score]' role='measure' type='quantitative' />
+            <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1055549988307313]' derivation='User' name='[usr:Calculation_1055549988307313:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Clean Review,Sentiment Label)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action2_13B69B65ED09415795117743F76C51AA]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[clean_review]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label,Title)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_04E31AF27CC8471BB6A920CFF30CC193]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Shoe Type]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+              <groupfilter function='level-members' level='[title]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label,Title)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Clean Review,Sentiment Label)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Sentiment Score (contenitore),Sentiment Label)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:sentiment_score:qk]' value='25' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' />
+              <tooltip column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[usr:Calculation_1055549988307313:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:sentiment_score:qk]</rows>
+        <cols>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</cols>
+      </table>
+      <simple-id uuid='{3205043A-AE09-45FB-AB79-2F2527868EBA}' />
+    </worksheet>
+    <worksheet name='parole chiave sentiment'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/sentimentrecensioniamazonshoes/parolechiavesentiment?rev=' id='parolechiavesentiment' path='/workbooks/sentimentrecensioniamazonshoes' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sentiment_shoes_data.csv+ (Connessioni multiple)' name='federated.0pr7t1t1l7wtar1e954p00j8bifw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pr7t1t1l7wtar1e954p00j8bifw'>
+            <column aggregation='None' datatype='integer' name='[Sentiment Score (contenitore)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='-2' formula='[sentiment_score]' peg='0' size='0.091' />
+            </column>
+            <column datatype='string' name='[Shoe Type]' role='dimension' type='nominal' />
+            <column-instance column='[Shoe Type]' derivation='Attribute' name='[attr:Shoe Type:nk]' pivot='key' type='nominal' />
+            <column caption='Clean Review' datatype='string' name='[clean_review]' role='dimension' type='nominal' />
+            <column-instance column='[Sentiment Score (contenitore)]' derivation='None' name='[none:Sentiment Score (contenitore):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[clean_review]' derivation='None' name='[none:clean_review:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sentiment_label]' derivation='None' name='[none:sentiment_label:nk]' pivot='key' type='nominal' />
+            <column caption='Sentiment Label' datatype='string' name='[sentiment_label]' role='dimension' type='nominal' />
+            <column caption='Sentiment Score' datatype='real' name='[sentiment_score]' role='measure' type='quantitative' />
+            <column caption='Title' datatype='string' name='[title]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action4_11409E4D4CBD4824BC24AB965A74BB7E]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Shoe Type]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label,Title)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_04E31AF27CC8471BB6A920CFF30CC193]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Shoe Type]' />
+              <groupfilter function='level-members' level='[sentiment_label]' />
+              <groupfilter function='level-members' level='[title]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label,Title)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Sentiment Score (contenitore),Sentiment Label)]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Shoe Type,Sentiment Label)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' />
+              <lod column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:clean_review:nk]' />
+              <tooltip column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[attr:Shoe Type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='has-stroke' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{5000D8B6-8045-41CB-8C45-208A0BBCDCBF}' />
+    </worksheet>
+    <worksheet name='rating/sentiment'>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/sentimentrecensioniamazonshoes/ratingsentiment?rev=' id='ratingsentiment' path='/workbooks/sentimentrecensioniamazonshoes' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sentiment_shoes_data.csv+ (Connessioni multiple)' name='federated.0pr7t1t1l7wtar1e954p00j8bifw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pr7t1t1l7wtar1e954p00j8bifw'>
+            <column aggregation='None' datatype='integer' name='[Sentiment Score (contenitore)]' role='dimension' type='quantitative'>
+              <calculation class='bin' decimals='-2' formula='[sentiment_score]' peg='0' size='0.091' />
+            </column>
+            <column datatype='string' name='[Shoe Type]' role='dimension' type='nominal' />
+            <column-instance column='[sentiment_score]' derivation='Avg' name='[avg:sentiment_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[rating]' derivation='Count' name='[cnt:rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Sentiment Score (contenitore)]' derivation='None' name='[none:Sentiment Score (contenitore):ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Shoe Type]' derivation='None' name='[none:Shoe Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sentiment_label]' derivation='None' name='[none:sentiment_label:nk]' pivot='key' type='nominal' />
+            <column caption='Rating' datatype='real' name='[rating]' role='measure' type='quantitative' />
+            <column caption='Sentiment Label' datatype='string' name='[sentiment_label]' role='dimension' type='nominal' />
+            <column caption='Sentiment Score' datatype='real' name='[sentiment_score]' role='measure' type='quantitative' />
+            <column-instance column='[total_reviews]' derivation='Sum' name='[sum:total_reviews:qk]' pivot='key' type='quantitative' />
+            <column caption='Total Reviews' datatype='integer' name='[total_reviews]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <slices>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</column>
+            <column>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[Action (Sentiment Score (contenitore),Sentiment Label)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='10' />
+            <format attr='div-level' scope='cols' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' />
+              <size column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[sum:total_reviews:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[avg:sentiment_score:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='none' probability='95' scope='per-cell' value-column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:rating:qk]' z-order='2' />
+            <reference-line axis-column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[avg:sentiment_score:qk]' enable-instant-analytics='true' fill-above='true' fill-below='true' formula='average' id='refline1' label-type='none' percentage-bands='true' probability='95' scope='per-cell' symmetric='false' value-column='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:rating:qk]' z-order='1'>
+              <reference-line-value percentage='60' />
+              <reference-line-value percentage='80' />
+            </reference-line>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2.7999999523162842' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[cnt:rating:qk]</rows>
+        <cols>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[avg:sentiment_score:qk]</cols>
+      </table>
+      <simple-id uuid='{8687BC78-0934-4AE6-BA7D-792480769322}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='sentiment dash'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;sentiment dash&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <repository-location derived-from='https://haproxy-traffic-splitter/workbooks/sentimentrecensioniamazonshoes/sentimentdash?rev=' id='sentimentdash' path='/workbooks/sentimentrecensioniamazonshoes' revision='' />
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='14' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='5250' id='15' type-v2='title' w='98400' x='800' y='1000'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+                <format attr='background-color' value='#f9f9f9' />
+              </zone-style>
+            </zone>
+            <zone h='6500' id='20' type-v2='dashboard-object' w='98400' x='800' y='6250'>
+              <button action='tabdoc:goto-sheet window-id=&quot;{1904E2A4-56B8-48E4-B084-7DE5DB37BF97}&quot;' button-type='text'>
+                <button-visual-state>
+                  <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                  <format attr='background-color' value='#e15759' />
+                </button-visual-state>
+              </button>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='86250' id='12' type-v2='layout-basic' w='98400' x='800' y='12750'>
+              <zone forceUpdate='true' h='86250' id='19' param='[com.tableau.addfilters].[0.0.0].[https://extensions.tableauusercontent.com/sandbox/add-filters/index.html]' type-v2='dashboard-object' w='98400' x='800' y='12750'>
+                <add-in add-in-id='com.tableau.addfilters' extension-url='https://extensions.tableauusercontent.com/sandbox/add-filters/index.html' extension-version='0.0.0' instance-id='96D778DA3C374473AC7FEEE7A1C9D7DE'>
+                  <instance-settings />
+                  <type-settings>
+                    <dashboard />
+                  </type-settings>
+                </add-in>
+                <zone-style>
+                  <format attr='border-color' value='#b4b4b4' />
+                  <format attr='border-style' value='solid' />
+                  <format attr='border-width' value='1' />
+                  <format attr='margin' value='4' />
+                  <format attr='background-color' value='#ffffff' />
+                </zone-style>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='background-color' value='#ffffff' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+            <format attr='background-color' value='#dfe7e8' />
+          </zone-style>
+        </zone>
+        <zone h='33662' id='5' name='analisi per prodotto' w='69433' x='27609' y='64204'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#f2f9f9' />
+          </zone-style>
+        </zone>
+        <zone h='12972' id='6' name='analisi per prodotto' pane-specification-id='1' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' type-v2='color' w='11504' x='14462' y='18555'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#f0f7fa' />
+          </zone-style>
+        </zone>
+        <zone h='12972' id='7' name='analisi per prodotto' pane-specification-id='3' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' type-v2='color' w='11504' x='3040' y='18555'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#f0f7fa' />
+          </zone-style>
+        </zone>
+        <zone h='24631' id='8' name='info generiche' show-title='false' w='22679' x='3287' y='34811' />
+        <zone h='33990' id='10' name='parole chiave sentiment' w='23665' x='2794' y='64039'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#f2f9f9' />
+          </zone-style>
+        </zone>
+        <zone h='41544' id='11' name='distribuzione sentiment' w='68529' x='27609' y='16256'>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='background-color' value='#f0f7fa' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontalignment='1'>&lt;sentiment dash&gt;</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98770' id='16' param='vert' type-v2='layout-flow' w='95734' x='2133' y='615'>
+                <zone h='3230' id='15' type-v2='title' w='95734' x='2133' y='615'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f9f9f9' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='22153' id='11' is-fixed='true' name='distribuzione sentiment' w='95734' x='2133' y='3845'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='198' h='15846' id='8' is-fixed='true' name='info generiche' show-title='false' w='95734' x='2133' y='25998'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='272' h='21538' id='10' is-fixed='true' name='parole chiave sentiment' w='95734' x='2133' y='41844'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='269' h='21307' id='5' is-fixed='true' name='analisi per prodotto' w='95734' x='2133' y='63382'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='5077' id='6' name='analisi per prodotto' pane-specification-id='1' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' type-v2='color' w='95734' x='2133' y='84689'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f0f7fa' />
+                  </zone-style>
+                </zone>
+                <zone h='5619' id='7' name='analisi per prodotto' pane-specification-id='3' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' type-v2='color' w='95734' x='2133' y='89766'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f0f7fa' />
+                  </zone-style>
+                </zone>
+                <zone h='4000' id='18' type-v2='dashboard-object' w='95734' x='2133' y='95385'>
+                  <button action='' button-type='text'>
+                    <button-visual-state>
+                      <button-caption-font-style fontcolor='#ffffff' fontname='Tableau Bold' fontsize='12' />
+                      <format attr='background-color' value='#333333' />
+                    </button-visual-state>
+                  </button>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{7B691626-B5F5-4340-8261-7CF6F8A62974}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='info generiche'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{079FD13D-7D00-4AD8-9759-CE799A914E74}' />
+    </window>
+    <window class='worksheet' name='distribuzione sentiment'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[Parameters].[Shoe Type Parametro]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Sentiment Score (contenitore):qk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type (cleaned_shoes_data.csv):nk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1AFB93C3-20AA-41AD-AF11-D69A61FCC22B}' />
+    </window>
+    <window class='worksheet' name='rating/sentiment'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[sum:total_reviews:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1904E2A4-56B8-48E4-B084-7DE5DB37BF97}' />
+    </window>
+    <window class='worksheet' name='parole chiave sentiment'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:clean_review:nk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{BD9517C8-243F-4B0E-99CF-C288F10BFB37}' />
+    </window>
+    <window class='worksheet' name='analisi per prodotto'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]' type='color' />
+            <card pane-specification-id='3' param='[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Sentiment Score (contenitore):qk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]</field>
+            <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:title:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{0B22BD84-8081-45D3-B207-955E4B570203}' />
+    </window>
+    <window class='dashboard' maximized='true' name='sentiment dash'>
+      <viewpoints>
+        <viewpoint name='analisi per prodotto'>
+          <zoom type='fit-width' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:Shoe Type:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='distribuzione sentiment'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='info generiche'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='parole chiave sentiment'>
+          <zoom type='fit-width' />
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields />
+                    <y-fields />
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:clean_review:nk]</field>
+                    <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[none:sentiment_label:nk]</field>
+                    <field>[federated.0pr7t1t1l7wtar1e954p00j8bifw].[attr:Shoe Type:nk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>&quot;damaged shoes&quot;</value>
+                  <value>&quot;negative&quot;</value>
+                  <value>&quot;Men&quot;</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <device-preview visible='true' />
+      <simple-id uuid='{871ABACC-1302-4C61-A8AF-E4E42EC9A1C8}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='sentiment dash' width='384'>
+      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
+    </thumbnail>
+  </thumbnails>
+  <referenced-extensions>
+    <referenced-extension>
+      <manifest manifest-version='0.1'>
+        <dashboard-extension extension-version='0.0.0' id='com.tableau.addfilters'>
+          <default-locale>en_US</default-locale>
+          <name resource-id='name' />
+          <description>Add Filters</description>
+          <author email='customerservice@tableau.com' name='Tableau' organization='Tableau' website='https://www.tableau.com' />
+          <min-api-version>1.7</min-api-version>
+          <source-location>
+            <url>https://extensions.tableauusercontent.com/sandbox/add-filters/index.html</url>
+          </source-location>
+          <icon>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</icon>
+          <context-menu>
+            <configure-context-menu-item />
+          </context-menu>
+        </dashboard-extension>
+        <resources>
+          <resource id='name'>
+            <text locale='de_DE'>Filter hinzufügen</text>
+            <text locale='en_GB'>Add Filters</text>
+            <text locale='en_US'>Add Filters</text>
+            <text locale='es_ES'>Añadir filtros</text>
+            <text locale='fr_CA'>Ajouter des filtres</text>
+            <text locale='fr_FR'>Ajouter des filtres</text>
+            <text locale='it_IT'>Aggiungi filtri</text>
+            <text locale='ja_JP'>フィルターの追加</text>
+            <text locale='ko_KR'>필터 추가</text>
+            <text locale='pt_BR'>Adicionar filtros</text>
+            <text locale='sv_SE'>Lägg till filter</text>
+            <text locale='th_TH'>เพิ่มตัวกรอง</text>
+            <text locale='zh_CN'>添加筛选器</text>
+            <text locale='zh_TW'>新增篩選器</text>
+          </resource>
+        </resources>
+      </manifest>
+      <referenced-views>
+        <referenced-view instances='1' viewId='sentiment dash' />
+      </referenced-views>
+    </referenced-extension>
+  </referenced-extensions>
+  <_.fcp.WorkbookOptimizerRuleConfig.true...workbook-optimizer>
+    <rule-config>
+      <rule ignored='true' ruleID='11' />
+    </rule-config>
+  </_.fcp.WorkbookOptimizerRuleConfig.true...workbook-optimizer>
+</workbook>
