@@ -1,27 +1,43 @@
-/* Titoli arancioni */
+/* Titoli arancioni e centrati */
 h1, h2, h3, h4 {
     color: #FF8C00;
-    align: centre;
+    text-align: center;
 }
 
-/* Pulsanti principali */
+/* Pulsanti principali arancioni e centrati */
 button[kind="primary"] {
     display: block;
     margin: 1em auto;
     background-color: #FF8C00 !important;
     color: white !important;
     border: none;
-    align: centre;
 }
 
-/* Sidebar: sfondo arancione e testo bianco */
+/* Sidebar: sfondo arancione */
 section[data-testid="stSidebar"] {
     background-color: #FF8C00 !important;
+    padding: 1em;
 }
 
+/* Sidebar: testo bianco */
+section[data-testid="stSidebar"] * {
+    color: white !important;
+}
 
-/* Sfondo del main completamente bianco */
+/* Input della sidebar: sfondo bianco e testo nero per contrasto */
+section[data-testid="stSidebar"] .stTextInput,
+section[data-testid="stSidebar"] .stTextArea,
+section[data-testid="stSidebar"] .stSelectbox,
+section[data-testid="stSidebar"] .stNumberInput,
+section[data-testid="stSidebar"] .stDateInput,
+section[data-testid="stSidebar"] .stCheckbox {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 6px;
+    padding: 0.4em;
+}
+
+/* Sfondo principale completamente bianco */
 div.block-container {
     background-color: white !important;
 }
-
