@@ -44,8 +44,8 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 button[kind="primary"] {
-    background-color: #FF8C00 !important;
-    color: white !important;
+    background-color: white !important;
+    color: #FF8C00 !important;
     display: block;
     margin: 1em auto;
     border: none;
