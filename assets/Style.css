@@ -32,12 +32,12 @@ section[data-testid="stSidebar"] .stNumberInput,
 section[data-testid="stSidebar"] .stDateInput,
 section[data-testid="stSidebar"] .stCheckbox {
     background-color: #ffa54f !important; /* arancio chiaro */
-    color: #00BFFF !important;            /* azzurro */
+    color: #fffFFF !important;            /* azzurro */
     border-radius: 6px;
     padding: 0.4em;
 }
 
 /* Sfondo principale completamente bianco */
 div.block-container {
-    background-color: white !important;
+    background-color: #ffa54f !important;
 }
