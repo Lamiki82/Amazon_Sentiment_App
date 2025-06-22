@@ -1,16 +1,15 @@
-/* Sidebar interamente arancione */
+/* === SIDEBAR === */
 section[data-testid="stSidebar"] {
     background-color: #FF8C00 !important;
 }
 
-/* Tutto il contenuto interno della sidebar */
 section[data-testid="stSidebar"] * {
-    background-color: #FF8C00 !important;  /* rimuove sfondo bianco interno */
+    background-color: #FF8C00 !important; /* Rimuove sfondo bianco interno */
     color: white !important;
     border-color: white !important;
 }
 
-/* Input e select con bordo bianco, sfondo trasparente e testo bianco */
+/* Input, textarea e select nella sidebar */
 section[data-testid="stSidebar"] input,
 section[data-testid="stSidebar"] textarea,
 section[data-testid="stSidebar"] select {
@@ -26,30 +25,30 @@ section[data-testid="stSidebar"] button {
     color: white !important;
     font-weight: bold;
     border: 1px solid white !important;
-    align: center;
+    display: block;
+    margin: 1em auto;
 }
 
-/* Sfondo del main bianco */
-[data-testid="stAppViewContainer"], .block-container {
+/* === CONTENUTO PRINCIPALE === */
+[data-testid="stAppViewContainer"], 
+.block-container {
     background-color: white !important;
 }
 
-/* Titoli principali */
+/* Titoli centrati e arancioni */
 h1, h2, h3, h4 {
     color: #FF8C00;
     text-align: center;
 }
-li e pulsanti principali */
-h1, h2, h3, h4 {
-    color: #FF8C00;
-    text-align: center;
-}
+
+/* Pulsanti principali */
 button[kind="primary"] {
     background-color: white !important;
     color: #FF8C00 !important;
     display: block;
     margin: 1em auto;
-    border: white;
-    align: center;
+    border: 1px solid #FF8C00 !important;
+    font-weight: bold;
 }
+
 
