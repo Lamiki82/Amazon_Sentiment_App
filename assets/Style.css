@@ -1,6 +1,7 @@
 /* Titoli arancioni */
 h1, h2, h3, h4 {
     color: #FF8C00;
+    align: centre;
 }
 
 /* Pulsanti principali */
@@ -10,6 +11,7 @@ button[kind="primary"] {
     background-color: #FF8C00 !important;
     color: white !important;
     border: none;
+    align: centre;
 }
 
 /* Sidebar: sfondo arancione e testo bianco */
@@ -19,20 +21,6 @@ section[data-testid="stSidebar"] {
 
 section[data-testid="stSidebar"] * {
     color: white !important;
-}
-
-/* Campi input nella sidebar con sfondo bianco */
-section[data-testid="stSidebar"] .stTextInput,
-section[data-testid="stSidebar"] .stTextArea,
-section[data-testid="stSidebar"] .stSelectbox,
-section[data-testid="stSidebar"] .stNumberInput,
-section[data-testid="stSidebar"] .stDateInput,
-section[data-testid="stSidebar"] .stCheckbox {
-    background-color: white !important;
-    color: black !important;
-    border-radius: 6px;
-    padding: 0.5em;
-}
 
 /* Sfondo del main completamente bianco */
 div.block-container {
