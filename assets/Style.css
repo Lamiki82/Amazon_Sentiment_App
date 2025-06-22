@@ -19,8 +19,6 @@ section[data-testid="stSidebar"] {
     background-color: #FF8C00 !important;
 }
 
-section[data-testid="stSidebar"] * {
-    color: white !important;
 
 /* Sfondo del main completamente bianco */
 div.block-container {
