@@ -86,10 +86,6 @@ title_filter = st.sidebar.multiselect("Filtra per articolo (titolo)", options=so
 sentiment_wordcloud = st.sidebar.radio("Visualizza WordCloud per sentiment", options=["positive", "neutral", "negative"])
 show_wordcloud = st.sidebar.checkbox("Mostra Wordcloud & Conteggio parole")
 
-st.sidebar.markdown("---")
-if st.sidebar.button("🔄 Reset filtri"):
-    st.rerun()
-
 if st.sidebar.button("📤 Esporta CSV filtrato"):
     st.download_button(
         label="Scarica dati",
