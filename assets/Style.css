@@ -26,6 +26,7 @@ section[data-testid="stSidebar"] button {
     color: white !important;
     font-weight: bold;
     border: 1px solid white !important;
+    border-radius: 5px;
     align: center;
 }
 
