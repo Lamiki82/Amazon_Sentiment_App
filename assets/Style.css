@@ -7,7 +7,7 @@ section[data-testid="stSidebar"] {
 section[data-testid="stSidebar"] * {
     background-color: #FF8C00 !important;  /* rimuove sfondo bianco interno */
     color: white !important;
-border: 1px solid white !important;
+    border-color: white !important;
 }
 
 /* Input e select con bordo bianco, sfondo trasparente e testo bianco */
@@ -26,7 +26,6 @@ section[data-testid="stSidebar"] button {
     color: white !important;
     font-weight: bold;
     border: 1px solid white !important;
-    border-radius: 5px;
     align: center;
 }
 
