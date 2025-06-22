@@ -5,12 +5,12 @@ section[data-testid="stSidebar"] {
 
 /* Contenuto interno della sidebar */
 section[data-testid="stSidebar"] * {
-    background-color: #FF8C00 !important;  /* Elimina sfondo bianco interno */
+    background-color: #FF8C00 !important;
     color: white !important;
     border-color: white !important;
 }
 
-/* Input, textarea e select */
+/* Input, textarea, select */
 section[data-testid="stSidebar"] input,
 section[data-testid="stSidebar"] textarea,
 section[data-testid="stSidebar"] select {
@@ -29,7 +29,16 @@ section[data-testid="stSidebar"] input[type="checkbox"] {
     height: 16px;
 }
 
-/* Etichette dei checkbox */
+/* Radio button */
+section[data-testid="stSidebar"] input[type="radio"] {
+    accent-color: white !important;
+    background-color: transparent !important;
+    border: 1px solid white !important;
+    width: 16px;
+    height: 16px;
+}
+
+/* Etichette di checkbox e radio */
 section[data-testid="stSidebar"] label {
     color: white !important;
 }
