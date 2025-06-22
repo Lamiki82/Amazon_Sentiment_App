@@ -48,6 +48,7 @@ button[kind="primary"] {
     color: #FF8C00 !important;
     display: block;
     margin: 1em auto;
-    border: none;
+    border: white;
+    align: center;
 }
 
