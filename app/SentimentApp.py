@@ -33,6 +33,9 @@ def get_base64_encoded_image(image_path):
 
 nltk.download('stopwords')
 
+import os
+os.environ["STREAMLIT_WATCHDOG_ENABLED"] = "false"
+
 # === CONFIGURAZIONE STREAMLIT ===
 load_external_css("assets/Style.css")
 # === LOAD DATA ===
